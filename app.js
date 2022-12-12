@@ -36,7 +36,7 @@ reset.addEventListener('click', function(){
   heuresEl.textContent = 0;
   minutesEl.textContent = 0;
   secondesEl.textContent = 0;
-//stop the timer after pressing "reset"
+
 clearInterval(interval);
 })
 
