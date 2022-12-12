@@ -4,51 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="./style.css">
-  <title>Nouvel an 2023</title>
-
-
-
+  
+    
+  <title>Nouvel an 2022</title>
 </head>
 
 <body>
 
 
 
-
-
-
-  <!--<label for="appt">Choose a time for your meeting:</label>
-
-<input type="time" id="appt" name="appt"
-       min="09:00" max="18:00" required>
-
-<small>Office hours are 9am to 6pm</small>-->
-
-  <!--<div class="div1">
-    <p id="horloge"></p>
-    <p>Click to display the time.</p>
-    <button onclick="getElementById('horloge').innerHTML=Date()">What is the time?</button>
-  </div>-->
-
-
-
-  <div>
-
-    <p id="demo"></p>
-
-  </div>
-
-
+  
+  
+     
+      <button id="start" style = "display: block" class="btn btn-primary">START</button>
+      <button id="stop"  style = "display: block" class="btn btn-danger">STOP</button>
+     
   <div id="wrapper">
-    <div id="title">Nouvel an 2023 ...</div>
-
+    <div id="title">Nouvel an 2022 ...</div>
     <div id="minuteur">
-
       <div class="box">
         <div id="j"></div>
         <div class="unite">Jours</div>
@@ -65,28 +41,9 @@
         <div id="s"></div>
         <div class="unite">Secondes</div>
       </div>
-
     </div>
-
-
-
-    <p id="display">&nbsp;</p>
-
-
-
-
-
-    <button type="button" class="btn btn-success" id="startButton" onclick="getCountdown()">START</button>
-    <button type="button" class="btn btn-danger" id="stop" onclick="clearInterval(countDownInterval)">STOP</button>
-
   </div>
-
-
   <script src="./app.js"></script>
-
-
-
-
 </body>
 
 </html>

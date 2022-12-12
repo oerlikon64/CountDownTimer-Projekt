@@ -6,21 +6,36 @@ let joursEl = document.getElementById("j");
 let heuresEl = document.getElementById("h");
 let minutesEl = document.getElementById("m");
 let secondesEl = document.getElementById("s");
+let btn = document.querySelector('button');
 
+
+let startBtn = document.getElementById("start");
+let stopBtn = document.getElementById("stop");
+
+
+
+startBtn.addEventListener("click", start);
+
+stopBtn.addEventListener("click", stop);
+
+let interval;
+
+function start() {
+interval = setInterval(getCountdown, 1000);}
+
+function stop() {
+clearInterval(interval);
+}
 
 
 
 
 let now = new Date();
-
-
 const dateOffsetInMinutes = now.getTimezoneOffset();
-
 
 const unJourEnMs = 1000 * 60 * 60 * 24;
 const uneHeureEnMs = 1000 * 60 * 60;
 const uneMinuteEnMs = 1000 * 60;
-console.log(Date);
 
 
 const newYear = new Date("2023");
@@ -31,22 +46,23 @@ const getCountdown = () => {
 
   let tempsRestantEnMs = newYear - nowDate + (dateOffsetInMinutes * uneMinuteEnMs);
 
- 
+  console.log(tempsRestantEnMs);
 
-  // jours
+
+  // Tages
   let nbJours = Math.floor(tempsRestantEnMs / unJourEnMs);
 
 
-  // heures
+  // Stunde
   let resteTempsSansJoursMs = tempsRestantEnMs - (nbJours * unJourEnMs);
   let nbHeures = Math.floor(resteTempsSansJoursMs / uneHeureEnMs);
 
-  // minutes
+  // Minuten
   let resteTempsSansHeuresMs = resteTempsSansJoursMs - (nbHeures * uneHeureEnMs);
   let nbMinutes = Math.floor(resteTempsSansHeuresMs / uneMinuteEnMs);
 
 
-  // secondes
+  // seconden
   let resteTempsSansMinutesMs = resteTempsSansHeuresMs - (nbMinutes * uneMinuteEnMs);
   let nbSecondes = Math.floor(resteTempsSansMinutesMs / 1000);
 
@@ -55,28 +71,23 @@ const getCountdown = () => {
   minutesEl.textContent = nbMinutes;
   secondesEl.textContent = nbSecondes;
 
-  
-
   if (tempsRestantEnMs <= 0) {
-    clearInterval(intervalId);
-    bodyEl.style.backgroundImage = 'url("./waiting.jpg")';
+    clearInterval(countDownInterval);
+    bodyEl.style.backgroundImage = 'url("./newyear.gif")';
     joursEl.textContent = 0;
     heuresEl.textContent = 0;
     minutesEl.textContent = 0;
     secondesEl.textContent = 0;
     titleEl.innerHTML = "Bonne année !!! &#127881;&#127881;";
-    }
-    
-   
-}//start automatisch Wann
-let countDownInterval = setInterval(getCountdown, 1000);
+  
 
-function startInterval(){
-  //start interval again
-if (onclick= true ){
-  startInterval
-  //start the interval
 
+
+
+  }
 }
 
-}
+
+
+// init
+getCountdown();

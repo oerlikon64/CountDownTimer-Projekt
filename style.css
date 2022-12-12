@@ -5,16 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-label {
-  display: block;
-  font: 1rem 'Fira Sans', sans-serif;
-}
-
-input,
-label {
-  margin: .4rem 0;
-}
-
 
 body {
   min-height: 100vh;
@@ -30,21 +20,13 @@ body {
   font-family: sans-serif;
 }
 
-
-.div1{
-  display:contents;
-  font-size: 20px;
-  
-
-}
-
 #wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(8px);
   padding: 40px 80px;
   border-radius: 10px;
 }
@@ -60,9 +42,6 @@ body {
   gap: 25px;
   margin: 10vh auto;
 }
-
-
-
 
 .box {
   height: 200px;
