@@ -11,12 +11,15 @@ let btn = document.querySelector('button');
 
 let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
+let resetBtn = document.getElementById("reset");
 
 
 
 startBtn.addEventListener("click", start);
 
 stopBtn.addEventListener("click", stop);
+
+resetBtn.addEventListener("click", reset);
 
 let interval;
 
@@ -27,8 +30,15 @@ function stop() {
 clearInterval(interval);
 }
 
+reset.addEventListener('click', function(){
 
-
+  joursEl.textContent = 0;
+  heuresEl.textContent = 0;
+  minutesEl.textContent = 0;
+  secondesEl.textContent = 0;
+//stop the timer after pressing "reset"
+clearInterval(interval);
+})
 
 let now = new Date();
 const dateOffsetInMinutes = now.getTimezoneOffset();
